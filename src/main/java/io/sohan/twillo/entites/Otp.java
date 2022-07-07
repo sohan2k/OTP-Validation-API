@@ -17,20 +17,18 @@ public class Otp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Builder.Default
-    private int otp=(int) (Math.random()*(99999-10000)+10000);
+    private int otp;
     private String phoneNo;
-    //String msg;
-    private Date expiryTime;//=new Date(System.currentTimeMillis()+12000);
+    private Date expiryTime;
 
     @Builder.Default
     @Enumerated(value = EnumType.STRING)
     private Status status=Status.Failed;
     public void generate(String phoneNo){
         this.phoneNo=phoneNo;
+        this.otp=(int) (Math.random()*(99999-10000)+10000);
         //this.msg="Your OTP is:"+ phoneNo +" for test spring message api";
-        this.expiryTime=new Date(System.currentTimeMillis()+12000);
+        this.expiryTime=new Date(System.currentTimeMillis()+1000*120);
     }
 
 }
