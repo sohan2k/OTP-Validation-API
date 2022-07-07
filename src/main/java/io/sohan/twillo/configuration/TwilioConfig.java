@@ -14,16 +14,4 @@ public class TwilioConfig {
     @Value("${twilio.FRM_NUMBER}")
     private String FRM_NUMBER;
 
-    //    public void send(User user)throws ParseException{
-//        Twilio.init(ACCOUNT_SID,AUTH_TOKEN);
-//        int min=10000;
-//        int max=99999;
-//        int code= (int) (Math.random()*(max-min)+min);
-//        String msg="Your OTP is:"+ code +" for test spring message api";
-//
-//        Message message=Message.creator(new PhoneNumber(user.getPhoneNo())
-//                ,new PhoneNumber(FRM_NUMBER),msg).create();
-//
-//        GeneratedOtp.setOtp(code);
-//    }
 }
